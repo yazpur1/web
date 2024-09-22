@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Amarillas</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            animation-name: backdiv;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+        }
+
+        .heart {
+            position: absolute;
+            margin: auto;
+            top: 70%; /* Ajuste para que esté más abajo */
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            background-color: red;
+            height: 150px;
+            width: 150px;
+            animation-name: beat;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+        }
+
+        .heart:after, .heart:before {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+        }
+
+        .heart:after {
+            left: 80px;
+            top: 0;
+        }
+
+        .heart:before {
+            left: 0;
+            top: -80px;
+        }
+
+        @keyframes backdiv {
+            50% {
+                background: #87eb7efd;
+            }
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(0.9) rotate(-45deg);
+            }
+        }
+
+        .bday {
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            font-size: 16px;
+            font-weight: 600;
+            color: #0e2804;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #aded23;
+            border-radius: 10px;
+            max-width: 90%; /* Ancho máximo responsive */
+            width: 400px; /* Ancho base */
+            position: relative;
+            z-index: 1; /* Asegura que esté por encima del corazón */
+            top: 20%; /* Espaciado superior */
+        }
+
+        button {
+            background-color: rgb(143, 216, 64);
+            margin-top: 10px; /* Espaciado entre el texto y el botón */
+            padding: 10px 20px; 
+            color: white; 
+            border: none;
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+        }
+
+        a {
+            color: white; 
+            text-decoration: none;
+        }
+
+        .elements {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; 
+            height: calc(100% - 200px); /* Ajustar altura para dejar espacio para el corazón */
+            position: relative; /* Para que el corazón esté en la misma sección */
+        }
+
+        @media (max-width: 600px) {
+            .heart {
+                height: 100px;
+                width: 100px;
+            }
+
+            .heart:after, .heart:before {
+                width: 100px;
+                height: 100px;
+            }
+
+            .bday {
+                font-size: 14px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <div class="bday">
+            <p>Hola Leonela,<br>
+            Tal vez te parezca extraño que te envíe esto, pero quiero que sepas que siempre guardo un gran cariño por ti en mi corazón. Me hubiera encantado entregarte las flores amarillas en persona, pero las circunstancias no lo permitieron.<br>
+            Espero que te guste esta flor amarilla virtual, un pequeño gesto para recordarte lo especial que eres. 🌼</p>
+            <button><a href="index2.html"><span>Haz clic aquí</span></a></button>
+        </div>
+        
+        <div class="elements">
+            <div class="heart"></div>
+        </div>
+    </div>
+</body>
+</html>
